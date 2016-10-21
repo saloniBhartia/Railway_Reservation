@@ -118,7 +118,10 @@ public class frmlogin extends javax.swing.JFrame {
       String uname="root";
       String pwd="";
       String url="jdbc:mysql://localhost/reservation?user="+uname+"&password="+pwd;
+      String utemp=txtuname.getText();
+      String pwdtemp=txtpwd.getText();
         try{
+            
            Class.forName("java.sql.Driver");
            Connection con =DriverManager.getConnection(url);
            Statement stmt = con.createStatement();
@@ -128,8 +131,6 @@ public class frmlogin extends javax.swing.JFrame {
            {
                String un=rs.getString("uname");
                String psd=rs.getString("password");
-               String utemp=txtuname.getText();
-               String pwdtemp=txtpwd.getText();
                if(utemp.equals(un)&& pwdtemp.equals(psd))
                {
                    flag=0;
@@ -144,7 +145,7 @@ public class frmlogin extends javax.swing.JFrame {
          else
          {
              frmavailtrain t;
-            t = new frmavailtrain();
+            t = new frmavailtrain(utemp);
             t.setVisible(true);
             dispose();
          }

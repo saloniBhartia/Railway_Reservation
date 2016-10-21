@@ -4,12 +4,18 @@ public class frmbooktrain extends javax.swing.JFrame {
     String w;
     int t;    
     int av;
-    public frmbooktrain(String st,String a) {
+    int num;
+    String u_name,t_number;
+    public frmbooktrain(String st,String a,String un, String tno) {
         av=Integer.parseInt(a);
         initComponents();
         w=st;
-                
-        
+        t_number=tno;
+        u_name=un;
+    }
+
+    private frmbooktrain(String _, String _0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -87,7 +93,7 @@ public class frmbooktrain extends javax.swing.JFrame {
 
         int num;
         num = Integer.parseInt(txtnum.getText());
-        if(num>10)
+        if(num>10 || num>av)
           JOptionPane.showMessageDialog(this,"You cannot book more than 10 ticket");
 
         else{
@@ -126,7 +132,7 @@ public class frmbooktrain extends javax.swing.JFrame {
     int ans = JOptionPane.showConfirmDialog(null, "Do you want to continue?");
       if(ans == JOptionPane.YES_OPTION)
       {
-          frmconfirm b=new frmconfirm(av);
+          frmconfirm b=new frmconfirm(av,u_name,t_number);
             b.setVisible(true);
             dispose();    
       }
@@ -159,7 +165,7 @@ public class frmbooktrain extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmbooktrain(" "," ").setVisible(true);
+                new frmbooktrain(" "," "," "," ").setVisible(true);
             }
         });
     }

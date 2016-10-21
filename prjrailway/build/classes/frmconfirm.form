@@ -58,8 +58,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnmenu">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Go to Menu"/>
+        <Property name="text" type="java.lang.String" value="LogOut"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnmenuActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

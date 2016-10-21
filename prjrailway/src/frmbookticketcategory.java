@@ -8,10 +8,12 @@ public class frmbookticketcategory extends javax.swing.JFrame {
     String a_t;
     String d_t;
     String av;
-    public frmbookticketcategory(String st) {
+    String un1;
+    public frmbookticketcategory(String st, String un) {
         initComponents();
         w=st;
-        
+        un1=un;
+        lblwelcome.setText("WELCOME "+un);
          String uname="root";
          String pwd="";
          String url="jdbc:mysql://localhost/reservation?user="+uname+"&password="+pwd;
@@ -44,6 +46,10 @@ public class frmbookticketcategory extends javax.swing.JFrame {
     private frmbookticketcategory(com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type String) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    private frmbookticketcategory(com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type String, com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type String0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -61,6 +67,8 @@ public class frmbookticketcategory extends javax.swing.JFrame {
         lbldept_time = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         lblavail = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lblwelcome = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,10 +115,36 @@ public class frmbookticketcategory extends javax.swing.JFrame {
 
         jLabel5.setText("Availability:");
 
+        jLabel4.setText("YOU CAN BOOK YOUR TICKET:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(lbltrainname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblwelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(257, 257, 257))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnacthreetier, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnactwotier, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5)
+                            .addComponent(btngeneral))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnsleeper, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(190, 190, 190)
+                .addComponent(btnacfirstclass, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -128,48 +162,31 @@ public class frmbookticketcategory extends javax.swing.JFrame {
                                     .addComponent(lbldept_time, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(56, 56, 56)
-                                .addComponent(lblarrivtime, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 121, Short.MAX_VALUE))
+                                .addComponent(lblarrivtime, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(lbltrainname, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnacfirstclass, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(173, 173, 173))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnacthreetier, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnactwotier, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(btngeneral))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnsleeper, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(32, 32, 32))))
+                        .addGap(173, 173, 173)
+                        .addComponent(jLabel4)))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbltrainname, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbltrainname, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblwelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addComponent(jLabel4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addGap(11, 11, 11)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblarrivtime, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(8, 8, 8)
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addComponent(lbldept_time, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -185,40 +202,40 @@ public class frmbookticketcategory extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnactwotier)
                     .addComponent(btnacthreetier))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnacfirstclass)
-                .addGap(23, 23, 23))
+                .addGap(30, 30, 30))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btngeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngeneralActionPerformed
-        frmbooktrain b=new frmbooktrain("General",av);
+        frmbooktrain b=new frmbooktrain("General",av,un1,w);
         b.setVisible(true);
         dispose();
     }//GEN-LAST:event_btngeneralActionPerformed
 
     private void btnsleeperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsleeperActionPerformed
-        frmbooktrain b=new frmbooktrain("Sleeper",av);
+        frmbooktrain b=new frmbooktrain("Sleeper",av,un1,w);
         b.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnsleeperActionPerformed
 
     private void btnacthreetierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnacthreetierActionPerformed
-        frmbooktrain b=new frmbooktrain("3 tier",av);
+        frmbooktrain b=new frmbooktrain("3 tier",av,un1,w);
         b.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnacthreetierActionPerformed
 
     private void btnactwotierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnactwotierActionPerformed
-        frmbooktrain b=new frmbooktrain("2 tier",av);
+        frmbooktrain b=new frmbooktrain("2 tier",av,un1,w);
         b.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnactwotierActionPerformed
 
     private void btnacfirstclassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnacfirstclassActionPerformed
-        frmbooktrain b=new frmbooktrain("First Class",av);
+        frmbooktrain b=new frmbooktrain("First Class",av,un1,w);
         b.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnacfirstclassActionPerformed
@@ -226,7 +243,7 @@ public class frmbookticketcategory extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmbookticketcategory(String).setVisible(true);
+                new frmbookticketcategory(String, String).setVisible(true);
             }
         });
     }
@@ -240,10 +257,12 @@ public class frmbookticketcategory extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblarrivtime;
     private javax.swing.JLabel lblavail;
     private javax.swing.JLabel lbldept_time;
     private javax.swing.JLabel lbltrainname;
+    private javax.swing.JLabel lblwelcome;
     // End of variables declaration//GEN-END:variables
 }

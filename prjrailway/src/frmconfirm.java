@@ -1,3 +1,9 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,8 +19,37 @@ public class frmconfirm extends javax.swing.JFrame {
     /**
      * Creates new form frmconfirm
      */
-    public frmconfirm(int av) {
+    int ch_av;
+    public frmconfirm(int av,String un, String t_no) {
+        ch_av=av;
+        String Tid = t_no;
+        String u_name=un;
+        
         initComponents();
+        
+      String uname="root";
+      String pwd="";
+      String url;
+      url = "jdbc:mysql://localhost/reservation?user="+uname+"&password="+pwd;
+      
+       try
+        {
+           Class.forName("java.sql.Driver");
+           Connection con =DriverManager.getConnection(url);
+           Statement stmt = con.createStatement();
+           String query = "UPDATE train SET "
+                   + "Available= "+av+","
+                   + "where TNo.= '"+Tid+";";
+            int f=stmt.executeUpdate(query);
+            System.out.println(f);
+           String q2 = "INSERT INTO reserved_train (`User`, `TNo.`) VALUES('"+ un +"', '"+Tid+"');";
+           int f2=stmt.executeUpdate(q2);
+           System.out.println(f2);
+        }
+       catch(Exception e)
+       {
+           System.out.println(e);
+       }
     }
 
     private frmconfirm() {
@@ -37,7 +72,12 @@ public class frmconfirm extends javax.swing.JFrame {
 
         jLabel1.setText("                   YOU HAVE BOOKED SUCCESSFULLY!!");
 
-        btnmenu.setText("Go to Menu");
+        btnmenu.setText("LogOut");
+        btnmenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmenuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,6 +105,14 @@ public class frmconfirm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
+         frmlogin l;
+        l = new frmlogin();
+        l.setVisible(true);
+        dispose(); 
+        
+    }//GEN-LAST:event_btnmenuActionPerformed
 
     /**
      * @param args the command line arguments

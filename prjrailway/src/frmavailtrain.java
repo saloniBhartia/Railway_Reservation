@@ -1,4 +1,5 @@
 
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
 import java.awt.event.MouseAdapter;
 import java.sql.*;
 import javax.swing.table.DefaultTableModel;
@@ -6,10 +7,16 @@ public class frmavailtrain extends javax.swing.JFrame {
 
     private final MouseAdapter mouseListnerEvents;
     String tnum;
-    public frmavailtrain() {
+    String un;
+    public frmavailtrain(String uname) {
         this.mouseListnerEvents = new MouseAdapter(){
         };
         initComponents();
+        un= uname;
+    }
+
+    private frmavailtrain(com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type String) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @SuppressWarnings("unchecked")
@@ -148,7 +155,9 @@ public class frmavailtrain extends javax.swing.JFrame {
       String from = (String) cmbfrom.getSelectedItem();
       String to = (String) cmbto.getSelectedItem();
       DefaultTableModel model = (DefaultTableModel)tblavail.getModel();
-       
+      
+      btnbook.setEnabled(true);
+      
       String uname="root";
       String pwd="";
       String url="jdbc:mysql://localhost/reservation?user="+uname+"&password="+pwd;
@@ -172,8 +181,8 @@ public class frmavailtrain extends javax.swing.JFrame {
         catch(Exception e){
             System.out.println(e);
         }
-        btnshow.setVisible(false);
-        btnbook.setVisible(false);
+        btnshow.setEnabled(true);
+        
             
     }//GEN-LAST:event_btnshowActionPerformed
  
@@ -184,7 +193,7 @@ public class frmavailtrain extends javax.swing.JFrame {
     }//GEN-LAST:event_tblavailMouseClicked
 
     private void btnbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbookActionPerformed
-        frmbookticketcategory  t= new   frmbookticketcategory(tnum);
+        frmbookticketcategory  t= new   frmbookticketcategory(tnum,un);
         t.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnbookActionPerformed
@@ -219,7 +228,7 @@ public class frmavailtrain extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmavailtrain().setVisible(true);
+                new frmavailtrain(String).setVisible(true);
             }
         });
     }
